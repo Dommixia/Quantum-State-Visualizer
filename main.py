@@ -7,7 +7,7 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 root = Tk()
 root.title("Quantum Gate Visualizer")
-root.geometry("500x400")
+root.geometry("700x600")
 qc = QuantumCircuit(1)
 
 bloch_canvas = None
@@ -86,4 +86,5 @@ circuit_display = Text(root, height=15, width=50, font=("Courier", 10), fg = "wh
 circuit_display.pack(pady=20)
 circuit_display.insert(END, qc.draw())
 root.configure(background="grey")
+update_visuals()
 root.mainloop()
