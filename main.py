@@ -13,7 +13,7 @@ bloch_canvas = None
 def update_visuals():
     global bloch_canvas
     circuit_display.delete("1.0", END)
-    circuit_display.insert(END, f"Gates applied: {qc.depth()}")  # just show depth
+    circuit_display.insert(END, qc.draw(fold=50))
     state = Statevector.from_instruction(qc)
     fig = plot_bloch_multivector(state)
     if bloch_canvas is not None:
