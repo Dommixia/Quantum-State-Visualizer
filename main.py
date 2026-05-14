@@ -41,6 +41,10 @@ def apply_s():
     circuit_display.delete("1.0", END)
     circuit_display.insert(END, qc.draw())
     update_visuals()
+def apply_Z():
+    qc.z(0)
+    circuit_display.delete("1.0", END)
+    circuit_display.insert(END, qc.draw())
 def reset():
     global qc
     qc = QuantumCircuit(1)
@@ -60,6 +64,8 @@ y_button = Button(button_frame, text="Y Gate", command=apply_y, width=12, height
 y_button.pack(side=LEFT, padx=10)
 s_button = Button(button_frame, text="S Gate", command=apply_s, width=12, height=2, background="blue")
 s_button.pack(side=LEFT, padx=10)
+z_button = Button(button_frame, text="Z Gate", command=apply_Z, width=12, height=2, background="blue")
+z_button.pack(side=LEFT, padx=10)
 reset_button = Button(button_frame, text="Reset", command=reset, width=12, height=2, background="blue")
 reset_button.pack(side=LEFT, padx=10)
 circuit_display = Text(root, height=15, width=50, font=("Courier", 10), fg = "white", bg = "grey")
